@@ -8,10 +8,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager vpAku;
     private ViewPagerAdapter vpAdapterku;
+    private TabLayout tabLayoutku;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +24,8 @@ public class MainActivity extends AppCompatActivity {
         vpAdapterku = new ViewPagerAdapter(getSupportFragmentManager());
 
         vpAku.setAdapter(vpAdapterku);
+
+        tabLayoutku = findViewById(R.id.tab_layout);
+        tabLayoutku.setupWithViewPager(vpAku);
     }
 }

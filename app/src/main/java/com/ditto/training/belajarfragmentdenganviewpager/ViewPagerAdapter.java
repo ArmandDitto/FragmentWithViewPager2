@@ -15,11 +15,25 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) { //Untuk Mengambil Item
-        return null;
+        HomeFragment homeFragmentku = new HomeFragment();
+        FavoriteFragment favoriteFragmentku = new FavoriteFragment();
+        Fragment itemku = null;
+        switch (position){
+            case 0:
+                itemku = homeFragmentku;
+                break;
+            case 1:
+                itemku = favoriteFragmentku;
+                break;
+            default:
+                itemku = homeFragmentku;
+                break;
+        }
+        return itemku;
     }
 
     @Override
     public int getCount() { //Untuk Menghitung jumlah item
-        return 0;
+        return 5;
     }
 }
