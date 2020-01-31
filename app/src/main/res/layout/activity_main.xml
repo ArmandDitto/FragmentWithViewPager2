@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/vp_aku"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        app:tabMode="scrollable"
+        app:tabTextColor="#FFF"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_aku"

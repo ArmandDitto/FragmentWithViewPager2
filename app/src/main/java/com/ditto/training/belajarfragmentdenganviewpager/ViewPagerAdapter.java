@@ -36,7 +36,19 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return "Page " +position;
+        String titleku = null;
+        switch (position){
+            case 0:
+                titleku = "Home";
+                break;
+            case 1:
+                titleku = "Favorite";
+                break;
+            default:
+                titleku = "Default";
+                break;
+        }
+        return titleku;
     }
 
     @Override
