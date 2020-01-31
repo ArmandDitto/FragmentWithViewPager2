@@ -5,11 +5,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+         import androidx.viewpager.widget.ViewPager;
+
+import java.util.ArrayList;
+
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+
+    private static ArrayList<String> myDataX;
+    private static ArrayList<String> myTitleX;
+    private static int numOfItems = 0;
+    //
+    public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList myTitle, ArrayList myData){
+        ViewPagerAdapter viewPagerAdapterku = new ViewPagerAdapter(fm);
+        myTitleX = myTitle;
+        myDataX = myData;
+        numOfItems = myData.size();
+        return viewPagerAdapterku;
+    }
+
     //Constructor
     public ViewPagerAdapter(FragmentManager fragmentManagerku){
         super(fragmentManagerku, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
     }
 
     //Hasil Implements Method
@@ -36,23 +54,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        String titleku = null;
-        switch (position){
-            case 0:
-                titleku = "Home";
-                break;
-            case 1:
-                titleku = "Favorite";
-                break;
-            default:
-                titleku = "Default";
-                break;
-        }
-        return titleku;
+        return myTitleX.get(position);
     }
 
     @Override
     public int getCount() { //Untuk Menghitung jumlah item
-        return 5;
+        return numOfItems;
     }
 }
