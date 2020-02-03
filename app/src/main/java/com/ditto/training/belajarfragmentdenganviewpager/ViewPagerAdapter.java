@@ -20,7 +20,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         ViewPagerAdapter viewPagerAdapterku = new ViewPagerAdapter(fm);
         myTitleX = myTitle;
         myDataX = myData;
-        numOfItems = myData.size();
+        numOfItems = myTitle.size();
         return viewPagerAdapterku;
     }
 
@@ -34,21 +34,10 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) { //Untuk Mengambil Item
-        HomeFragment homeFragmentku = new HomeFragment();
-        FavoriteFragment favoriteFragmentku = new FavoriteFragment();
-        Fragment itemku = null;
-        switch (position){
-            case 0:
-                itemku = homeFragmentku;
-                break;
-            case 1:
-                itemku = favoriteFragmentku;
-                break;
-            default:
-                itemku = homeFragmentku;
-                break;
-        }
-        return itemku;
+        HomeFragment homeFragmentku = null;
+        homeFragmentku = HomeFragment.newInstance(position, myDataX.get(position));
+
+        return homeFragmentku;
     }
 
     @Nullable
