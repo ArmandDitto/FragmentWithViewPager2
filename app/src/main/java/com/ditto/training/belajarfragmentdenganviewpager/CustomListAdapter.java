@@ -44,7 +44,7 @@ public class CustomListAdapter extends BaseAdapter {
         tvMakanan = convertView.findViewById(R.id.tv_makanan);
         tvHarga = convertView.findViewById(R.id.tv_harga);
 
-        tvMakanan.setText(currentMenuMakanan.getNamaMakanan());
+        tvMakanan.setText(position+". "+currentMenuMakanan.getNamaMakanan());
         tvHarga.setText(currentMenuMakanan.getHargaMakanan());
         return convertView;
     }

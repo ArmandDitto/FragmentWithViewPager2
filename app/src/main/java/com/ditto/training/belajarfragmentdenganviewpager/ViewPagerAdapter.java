@@ -44,7 +44,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         String title = "";
         title = myMenuX.get(position).getJudulMenu();
-        return title;
+        return position+". "+title;
     }
 
     @Override

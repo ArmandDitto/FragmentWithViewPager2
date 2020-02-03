@@ -72,23 +72,29 @@ public class MainActivity extends AppCompatActivity {
         menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
 
         ArrayList<MenuAku.MenuMakanan> menuMie = new ArrayList<>();
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Goreng", "20.000"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Bakar", "24.000"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Pop", "25.000"));
 
         ArrayList<MenuAku.MenuMakanan> menuNasi = new ArrayList<>();
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Goreng", "20.000"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Bakar", "24.000"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Pop", "25.000"));
 
         ArrayList<MenuAku.MenuMakanan> menuMinuman = new ArrayList<>();
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Jus Jeruk", "20.000"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Teh", "24.000"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Kopi", "25.000"));
+
+        ArrayList<MenuAku.MenuMakanan> menuSeafood = new ArrayList<>();
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Goreng", "20.000"));
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Bakar", "24.000"));
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Pop", "25.000"));
 
         kumpulanMenu.add(new MenuAku("Ayam", menuAyam));
         kumpulanMenu.add(new MenuAku("Mie", menuMie));
         kumpulanMenu.add(new MenuAku("Nasi", menuNasi));
         kumpulanMenu.add(new MenuAku("Minuman", menuMinuman));
+        kumpulanMenu.add(new MenuAku("Seafood", menuSeafood));
     }
 }
