@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayoutku;
     private ArrayList<String> titleAku, dataAku;
 
+    private ArrayList<MenuAku> kumpulanMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
         titleAku = new ArrayList<>();
         dataAku = new ArrayList<>();
+        kumpulanMenu = new ArrayList<>();
+
         generateTitle();
         generateData();
+        generateMenu();
 
         vpAku = findViewById(R.id.vp_aku);
-        vpAdapterku = ViewPagerAdapter.newInstance(getSupportFragmentManager(), titleAku, dataAku);
+        //vpAdapterku = ViewPagerAdapter.newInstance(getSupportFragmentManager(), titleAku, dataAku);
+        vpAdapterku = ViewPagerAdapter.newInstance(getSupportFragmentManager(), kumpulanMenu);
 
         vpAku.setAdapter(vpAdapterku);
 
@@ -54,5 +60,14 @@ public class MainActivity extends AppCompatActivity {
         titleAku.add("Genre");
         titleAku.add("Download");
         titleAku.add("Kids");
+    }
+
+    //Dummy Menu Aku
+    private void generateMenu(){
+        kumpulanMenu.add(new MenuAku("Home", "Data 001"));
+        kumpulanMenu.add(new MenuAku("Favorite", "Data 002"));
+        kumpulanMenu.add(new MenuAku("Genre", "Data 003"));
+        kumpulanMenu.add(new MenuAku("Download", "Data 004"));
+        kumpulanMenu.add(new MenuAku("Kids", "Data 005"));
     }
 }

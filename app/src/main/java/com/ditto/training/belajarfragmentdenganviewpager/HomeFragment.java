@@ -18,6 +18,8 @@ import org.w3c.dom.Text;
  */
 public class HomeFragment extends Fragment {
 
+    public TextView tvHome;
+
     public static HomeFragment newInstance(int pos, String data){
         HomeFragment homeFragment = new HomeFragment();
         Bundle args = new Bundle();
@@ -30,8 +32,6 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-
-    public TextView tvHome;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

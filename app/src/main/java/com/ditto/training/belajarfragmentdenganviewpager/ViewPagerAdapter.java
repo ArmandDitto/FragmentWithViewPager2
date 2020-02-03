@@ -14,14 +14,23 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private static ArrayList<String> myDataX;
     private static ArrayList<String> myTitleX;
+    private static ArrayList<MenuAku> myMenuX;
     private static int numOfItems = 0;
-    //
-    public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList myTitle, ArrayList myData){
+
+    public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList <String> myTitle, ArrayList <String> myData){
         ViewPagerAdapter viewPagerAdapterku = new ViewPagerAdapter(fm);
         myTitleX = myTitle;
         myDataX = myData;
         numOfItems = myTitle.size();
         return viewPagerAdapterku;
+    }
+
+    //Overloading
+    public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList <MenuAku> myMenu){
+        ViewPagerAdapter menuAku = new ViewPagerAdapter(fm);
+        myMenuX = myMenu;
+        numOfItems = myMenu.size();
+        return menuAku;
     }
 
     //Constructor
@@ -35,7 +44,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) { //Untuk Mengambil Item
         HomeFragment homeFragmentku = null;
-        homeFragmentku = HomeFragment.newInstance(position, myDataX.get(position));
+        homeFragmentku = HomeFragment.newInstance(position, myMenuX.get(position).getData());
 
         return homeFragmentku;
     }
@@ -43,7 +52,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return myTitleX.get(position);
+        String title = "";
+        title = myMenuX.get(position).getJudulMenu();
+        return title;
     }
 
     @Override
