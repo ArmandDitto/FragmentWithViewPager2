@@ -5,25 +5,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-         import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    private static ArrayList<String> myDataX;
-    private static ArrayList<String> myTitleX;
     private static ArrayList<MenuAku> myMenuX;
     private static int numOfItems = 0;
-
-    public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList <String> myTitle, ArrayList <String> myData){
-        ViewPagerAdapter viewPagerAdapterku = new ViewPagerAdapter(fm);
-        myTitleX = myTitle;
-        myDataX = myData;
-        numOfItems = myTitle.size();
-        return viewPagerAdapterku;
-    }
 
     //Overloading
     public static ViewPagerAdapter newInstance(FragmentManager fm, ArrayList <MenuAku> myMenu){
@@ -44,7 +33,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) { //Untuk Mengambil Item
         HomeFragment homeFragmentku = null;
-        homeFragmentku = HomeFragment.newInstance(position, myMenuX.get(position).getData());
+
+        homeFragmentku = HomeFragment.newInstance(myMenuX.get(position).getData());
 
         return homeFragmentku;
     }

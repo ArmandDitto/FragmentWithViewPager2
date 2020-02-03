@@ -4,13 +4,27 @@ import java.util.ArrayList;
 
 class MenuAku {
     private String judulMenu;
-    private String dataMenu;
+    private ArrayList <MenuMakanan> dataMenu;
 
-    public class MenuMakanan{
+    static class MenuMakanan{
+        private String namaMakanan;
+        private String hargaMakanan;
 
+        public MenuMakanan(String namaMakananku, String hargaMakananku){
+            this.namaMakanan = namaMakananku;
+            this.hargaMakanan = hargaMakananku;
+        }
+
+        public String getNamaMakanan() {
+            return namaMakanan;
+        }
+
+        public String getHargaMakanan() {
+            return hargaMakanan;
+        }
     }
 
-    public MenuAku(String judul, String data){
+    public MenuAku(String judul, ArrayList<MenuMakanan> data){
         this.judulMenu = judul;
         this.dataMenu = data;
     }
@@ -19,7 +33,7 @@ class MenuAku {
         return judulMenu;
     }
 
-    public String getData() {
+    public ArrayList<MenuMakanan> getData() {
         return dataMenu;
     }
 }

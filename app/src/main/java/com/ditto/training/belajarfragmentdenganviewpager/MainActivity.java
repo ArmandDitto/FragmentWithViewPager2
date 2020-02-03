@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> titleAku, dataAku;
 
     private ArrayList<MenuAku> kumpulanMenu;
+    private ArrayList<MenuAku.MenuMakanan> kumpulanMenuMakanan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         titleAku = new ArrayList<>();
         dataAku = new ArrayList<>();
         kumpulanMenu = new ArrayList<>();
+        kumpulanMenuMakanan = new ArrayList<>();
 
         generateTitle();
         generateData();
@@ -64,10 +66,29 @@ public class MainActivity extends AppCompatActivity {
 
     //Dummy Menu Aku
     private void generateMenu(){
-        kumpulanMenu.add(new MenuAku("Home", "Data 001"));
-        kumpulanMenu.add(new MenuAku("Favorite", "Data 002"));
-        kumpulanMenu.add(new MenuAku("Genre", "Data 003"));
-        kumpulanMenu.add(new MenuAku("Download", "Data 004"));
-        kumpulanMenu.add(new MenuAku("Kids", "Data 005"));
+        ArrayList<MenuAku.MenuMakanan> menuAyam = new ArrayList<>();
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+
+        ArrayList<MenuAku.MenuMakanan> menuMie = new ArrayList<>();
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+
+        ArrayList<MenuAku.MenuMakanan> menuNasi = new ArrayList<>();
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+
+        ArrayList<MenuAku.MenuMakanan> menuMinuman = new ArrayList<>();
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+
+        kumpulanMenu.add(new MenuAku("Ayam", menuAyam));
+        kumpulanMenu.add(new MenuAku("Mie", menuMie));
+        kumpulanMenu.add(new MenuAku("Nasi", menuNasi));
+        kumpulanMenu.add(new MenuAku("Minuman", menuMinuman));
     }
 }
