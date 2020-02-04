@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 public class CustomListAdapter extends BaseAdapter {
@@ -35,17 +37,31 @@ public class CustomListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView tvMakanan;
-        TextView tvHarga;
+        ViewHolder viewHolder;
+
         MenuAku.MenuMakanan currentMenuMakanan = (MenuAku.MenuMakanan) getItem(position);
         if(convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.layout_menuku, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         }
-        tvMakanan = convertView.findViewById(R.id.tv_makanan);
-        tvHarga = convertView.findViewById(R.id.tv_harga);
+        else{
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
 
-        tvMakanan.setText(position+". "+currentMenuMakanan.getNamaMakanan());
-        tvHarga.setText(currentMenuMakanan.getHargaMakanan());
+
+        viewHolder.tvMakanan.setText(position+". "+currentMenuMakanan.getNamaMakanan());
+        viewHolder.tvHarga.setText(currentMenuMakanan.getHargaMakanan());
         return convertView;
+    }
+
+    private class ViewHolder{
+        TextView tvMakanan;
+        TextView tvHarga;
+
+        public ViewHolder(View view){
+            tvMakanan = view.findViewById(R.id.tv_makanan);
+            tvHarga = view.findViewById(R.id.tv_harga);
+        }
     }
 }
