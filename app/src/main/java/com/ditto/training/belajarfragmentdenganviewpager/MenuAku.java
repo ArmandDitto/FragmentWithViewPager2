@@ -13,11 +13,13 @@ class MenuAku {
         private String namaMakanan;
         private String hargaMakanan;
         private String deskripsiMakanan;
+        private int gambarMakanan;
 
-        public MenuMakanan(String namaMakananku, String hargaMakananku, String deskripsiMakananku){
+        public MenuMakanan(String namaMakananku, String hargaMakananku, String deskripsiMakananku, int gambarMakananku){
             this.namaMakanan = namaMakananku;
             this.hargaMakanan = hargaMakananku;
             this.deskripsiMakanan = deskripsiMakananku;
+            this.gambarMakanan = gambarMakananku;
         }
 
         public String getNamaMakanan() {
@@ -32,6 +34,10 @@ class MenuAku {
             return deskripsiMakanan;
         }
 
+        public int getGambarMakanan() {
+            return gambarMakanan;
+        }
+
         @Override
         public int describeContents() {
             return 0;
@@ -42,12 +48,14 @@ class MenuAku {
             dest.writeString(this.namaMakanan);
             dest.writeString(this.hargaMakanan);
             dest.writeString(this.deskripsiMakanan);
+            dest.writeInt(this.gambarMakanan);
         }
 
         protected MenuMakanan(Parcel in) {
             namaMakanan = in.readString();
             hargaMakanan = in.readString();
             deskripsiMakanan = in.readString();
+            gambarMakanan= in.readInt();
         }
 
         public static final Creator<MenuMakanan> CREATOR = new Creator<MenuMakanan>() {

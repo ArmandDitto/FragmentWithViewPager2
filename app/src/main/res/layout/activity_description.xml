@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/tv_deskripsi_judul"
             android:layout_width="match_parent"
@@ -20,11 +19,26 @@
             android:hint="Ayam"
             android:textStyle="bold"
             android:textSize="16sp"/>
+        <ImageView
+            android:id="@+id/iv_deskripsi_gambar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
         <TextView
+            android:id="@+id/tv_deskripsi_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="20.000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/tv_deskripsi_isi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:hint="Deskripsi"
             android:textSize="16sp"/>
     </LinearLayout>
