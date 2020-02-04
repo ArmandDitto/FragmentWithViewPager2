@@ -34,8 +34,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) { //Untuk Mengambil Item
         HomeFragment homeFragmentku = null;
 
-        homeFragmentku = HomeFragment.newInstance(myMenuX.get(position).getData());
-
+        //homeFragmentku = HomeFragment.newInstance(myMenuX.get(position).getData());
+        homeFragmentku = new HomeFragment();
+        homeFragmentku.setData(myMenuX.get(position).getData());
         return homeFragmentku;
     }
 

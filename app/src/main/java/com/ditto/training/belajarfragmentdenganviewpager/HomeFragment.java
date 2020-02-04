@@ -25,10 +25,14 @@ public class HomeFragment extends Fragment {
     public ListView lvHome;
     //public ArrayAdapter<MenuAku.MenuMakanan> arrayAdapterku;
     public CustomListAdapter customListAdapter;
-    public static ArrayList<MenuAku.MenuMakanan> arrayListku;
+    public ArrayList<MenuAku.MenuMakanan> arrayListku;
 
     public HomeFragment() {
         // Required empty public constructor
+    }
+
+    public void setData(ArrayList<MenuAku.MenuMakanan> menuMakanans){
+        arrayListku = menuMakanans;
     }
 
     @Override
@@ -45,7 +49,7 @@ public class HomeFragment extends Fragment {
         return rootViewku;
     }
 
-    public static HomeFragment newInstance(ArrayList<MenuAku.MenuMakanan> menuMakananku){
+    public HomeFragment newInstance(ArrayList<MenuAku.MenuMakanan> menuMakananku){
         HomeFragment homeFragment = new HomeFragment();
         arrayListku = menuMakananku;
         return homeFragment;
