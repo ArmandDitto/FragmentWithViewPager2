@@ -1,6 +1,7 @@
 package com.ditto.training.belajarfragmentdenganviewpager;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,7 +34,18 @@ public class HomeFragment extends Fragment {
     }
 
     public void setData(ArrayList<MenuAku.MenuMakanan> menuMakanans){
-        arrayListku = menuMakanans;
+        this.arrayListku = menuMakanans;
+    }
+
+    public void cek(){
+        lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent deskripsiActivity = new Intent(getActivity(),DescriptionActivity.class);
+                deskripsiActivity.putExtra("DeskripsiMenuMakanan", customListAdapter.getItem(position));
+                startActivity(deskripsiActivity);
+            }
+        });
     }
 
     @Override
@@ -45,6 +58,7 @@ public class HomeFragment extends Fragment {
         customListAdapter = new CustomListAdapter(getContext(), arrayListku);
         lvHome = rootViewku.findViewById(R.id.lv_home);
         lvHome.setAdapter(customListAdapter);
+        cek();
 
         return rootViewku;
     }

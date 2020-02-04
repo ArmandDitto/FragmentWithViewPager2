@@ -67,29 +67,29 @@ public class MainActivity extends AppCompatActivity {
     //Dummy Menu Aku
     private void generateMenu(){
         ArrayList<MenuAku.MenuMakanan> menuAyam = new ArrayList<>();
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000"));
-        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Goreng", "20.000", "Ayam Goreng Enak Banget"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Bakar", "24.000", "Ayam Bakar Enak Banget"));
+        menuAyam.add(new MenuAku.MenuMakanan("Ayam Pop", "25.000", "Ayam Pop Enak Banget"));
 
         ArrayList<MenuAku.MenuMakanan> menuMie = new ArrayList<>();
-        menuMie.add(new MenuAku.MenuMakanan("Mie Goreng", "20.000"));
-        menuMie.add(new MenuAku.MenuMakanan("Mie Bakar", "24.000"));
-        menuMie.add(new MenuAku.MenuMakanan("Mie Pop", "25.000"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Goreng", "18.000", "Mie Goreng Enak Banget"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Bakar", "20.000", "Mie Bakar Enak Banget"));
+        menuMie.add(new MenuAku.MenuMakanan("Mie Pop", "22.000", "Mie Pop Enak Banget"));
 
         ArrayList<MenuAku.MenuMakanan> menuNasi = new ArrayList<>();
-        menuNasi.add(new MenuAku.MenuMakanan("Nasi Goreng", "20.000"));
-        menuNasi.add(new MenuAku.MenuMakanan("Nasi Bakar", "24.000"));
-        menuNasi.add(new MenuAku.MenuMakanan("Nasi Pop", "25.000"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Goreng", "18.000","Nasi Goreng Enak Banget"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Bakar", "20.000", "Nasi Bakar Enak Banget"));
+        menuNasi.add(new MenuAku.MenuMakanan("Nasi Pop", "22.000", "Nasi Bakar Enak Banget"));
 
         ArrayList<MenuAku.MenuMakanan> menuMinuman = new ArrayList<>();
-        menuMinuman.add(new MenuAku.MenuMakanan("Jus Jeruk", "20.000"));
-        menuMinuman.add(new MenuAku.MenuMakanan("Teh", "24.000"));
-        menuMinuman.add(new MenuAku.MenuMakanan("Kopi", "25.000"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Jus Jeruk", "10.000","Jus Jeruk Seger Banget"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Teh", "8.000","Teh Seger Banget"));
+        menuMinuman.add(new MenuAku.MenuMakanan("Kopi", "15.000","Kopi Seger Banget"));
 
         ArrayList<MenuAku.MenuMakanan> menuSeafood = new ArrayList<>();
-        menuSeafood.add(new MenuAku.MenuMakanan("Udang Goreng", "20.000"));
-        menuSeafood.add(new MenuAku.MenuMakanan("Udang Bakar", "24.000"));
-        menuSeafood.add(new MenuAku.MenuMakanan("Udang Pop", "25.000"));
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Goreng", "40.000", "Udang Goreng Enak Banget"));
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Bakar", "50.000", "Udang Bakar Enak Banget"));
+        menuSeafood.add(new MenuAku.MenuMakanan("Udang Pop", "60.000", "Udang Pop Enak Banget"));
 
         kumpulanMenu.add(new MenuAku("Ayam", menuAyam));
         kumpulanMenu.add(new MenuAku("Mie", menuMie));

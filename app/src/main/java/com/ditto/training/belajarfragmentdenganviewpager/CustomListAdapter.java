@@ -26,8 +26,9 @@ public class CustomListAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return makanan.get(position);
+    public MenuAku.MenuMakanan getItem(int position) {
+        MenuAku.MenuMakanan menuMakanan = makanan.get(position);
+        return menuMakanan;
     }
 
     @Override
